@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project</title>
+
+    <!--- JavaScript & JQuery-->
+
+    <!--- <script src="/assets/js/script.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--- CSS & Bootstrap-->
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Icons -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="header-div">
+        </div>
+        <div class="row" id="content-div">
+            <div class="col-md-8 col-md-offset-2 container shadow-lg" id="content-box">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img id="logo" src="" class="img-responsive">
+                        <h3 id="titulo">Employees List (CRUD)</h3>
+                    </div>
+                    <form class="" action="/search" method="GET">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <input name="name" class="form-control" id="input-box" list="input" type="text"
+                                    placeholder="Name">
+                                <datalist id="input">
+                                    <% if (employees.length > 0) {%>
+                                    <% employees.forEach((employees, index) => { %>
+                                    <option><%= employees.name %></option>
+                                    <% })} %>
+                                </datalist>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <button type="submit" id="btn-search" class="btn btn-block"><i
+                                        class="fas fa-search"></i> Search </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row well" id="content-box-well">
+                    <div class="col-md-6">
+                        <div id="">
+                            <% if (employees.length > 0) {%>
+                            <% employees.forEach((employees, index) => { %>
+                            <% if (!employees.imgUrl) {%>
+                            <img id="photo-box" src="assets/img/fundobranco.png" class="img-responsive">
+                            <% } else { %>
+                            <img id="photo-box" src=<%= funcionarios.imgUrl %> class="img-responsive">
+                            <% } %>
+                            <% })} %>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3">
+                                <button type="submit" id="btn-left" class="btn btn-block"><i
+                                        class="fas fa-chevron-left "></i></button>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" id="btn-right" class="btn btn-block"><i
+                                        class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+                    <div id="table-box" class="col-md-6">
+                        <table id="table-name" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (employees.length > 0) {%>
+                                <% employees.forEach((employees, index) => { %>
+                                <tr>
+                                    <td><%= employees.name %></td>
+                                </tr>
+                                <% }) %>
+                                <% } else { %>
+                                <tr>
+                                    <td>NULL</td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                        <table id="table-branch" class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (employees.length > 0) {%>
+                                <% employees.forEach((employees, index) => { %>
+                                <tr>
+                                    <td><%= employees.branch %></td>
+                                </tr>
+                                <% }) %>
+                                <% } else { %>
+                                <tr>
+                                    <td>NULL</td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                        <table id="table-registration" class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Registration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (employees.length > 0) {%>
+                                <% employees.forEach((employees, index) => { %>
+                                <tr>
+                                    <td><%= employees.registration %></td>
+                                </tr>
+                                <% }) %>
+                                <% } else { %>
+                                <tr>
+                                    <td>NULL</td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                        <table id="table-email" class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (employees.length > 0) {%>
+                                <% employees.forEach((employees, index) => { %>
+                                <tr>
+                                    <td><%= employees.role %></td>
+                                </tr>
+                                <% }) %>
+                                <% } else { %>
+                                <tr>
+                                    <td>NULL</td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="">
+                    <!--- <button id="btn-options" class="btn btn-block"><i class="fas fa-cog"></i> Options </button> --->
+                </div>
+                <div id="area-options">
+                    <div class="row" style="text-align:center;">
+                        <div class="col-md-6">
+                            <form class="" method="GET">
+                                <% if (employees.length > 0) {%>
+                                <% employees.forEach((employees, index) => { %>
+                                <label class="texto-label">Update Current Employee</label>
+                                <input name="name" class="form-control" id="inputBox" list="input" type="text"
+                                    value="<%= employees.name %>" placeholder="<%= employees.name %>">
+                                <input name="branch" class="form-control" id="inputBox" list="input" type="text"
+                                    value="<%= employees.branch %>" placeholder="<%= employees.branch %>">
+                                <input name="registration" class="form-control" id="inputBox" list="input" type="text"
+                                    value="<%= employees.registration %>" placeholder="<%= employees.registration %>"
+                                    readonly>
+                                <input name="role" class="form-control" id="inputBox" list="input" type="text"
+                                    value="<%= employees.role %>" placeholder="<%= employees.role %>">
+                                <% })} %>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button formaction="/update" type="submit" id="btn-editar"
+                                            class="btn btn-block"><i class="fas fa-magic"></i> Update </button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button formaction="/delete" type="submit" id="btn-excluir"
+                                            class="btn btn-block"><i class="fas fa-trash"></i> Delete </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <form class="texto-label" action="/register" method="GET">
+                                <% if (funcionarios.length > 0) {%>
+                                <% funcionarios.forEach((funcionarios, index) => { %>
+                                <label class="">Register a new Employee</label>
+                                <input name="name" class="form-control" id="inputBox" list="input" type="text"
+                                    placeholder="New Employee's name">
+                                <input name="branch" class="form-control" id="inputBox" list="input" type="text"
+                                    placeholder="Branch">
+                                <input name="registration" class="form-control" id="inputBox" list="input" type="text"
+                                    placeholder="Registration">
+                                <input name="role" class="form-control" id="inputBox" list="input" type="text"
+                                    placeholder="Role">
+                                <% })} %>
+                                <button type="submit" id="btn-register" class="btn btn-block"><i
+                                        class="fas fa-paper-plane"></i> Register </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="footer-div">
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>

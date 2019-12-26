@@ -1,0 +1,36 @@
+{
+  "name": "projeto",
+  "version": "1.0.0",
+  "description": "projeto do estagio",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasGuerraCavalcante/projeto-estagio.git"
+  },
+  "author": "Lucas Guerra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasGuerraCavalcante/projeto-estagio/issues"
+  },
+  "homepage": "https://github.com/LucasGuerraCavalcante/projeto-estagio#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
+    "hbs": "^4.0.6",
+    "msql": "^1.0.3",
+    "mysql": "^2.17.1",
+    "nodemon": "^2.0.2",
+    "req-flash": "0.0.3"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-execute": "^0.2.2"
+  }
+}
