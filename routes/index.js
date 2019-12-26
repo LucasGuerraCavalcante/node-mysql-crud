@@ -12,7 +12,7 @@ module.exports = {
                 res.redirect('/');
             }
             res.render('index.ejs', {
-                funcionarios: result
+                employees: result
             });
         }); 
     },    
@@ -30,7 +30,7 @@ module.exports = {
                     res.redirect('/');
                 }
                 res.render('index.ejs', {
-                    funcionarios: result
+                    employees: result
                 });
             });
         }
@@ -47,7 +47,7 @@ module.exports = {
                 res.redirect('/');
             }
             res.render('index.ejs', {
-                funcionarios: result
+                employees: result
             });
         });
     },
@@ -73,7 +73,7 @@ module.exports = {
                     res.redirect('/');
                 }
                 res.render('index.ejs', {
-                    funcionarios: result
+                    employees: result
                 });
             })
         });
@@ -114,7 +114,7 @@ module.exports = {
                         res.redirect('/');
                     }
                     res.render('index.ejs', {
-                        funcionarios: result
+                        employees: result
                     });
                 })
 
@@ -138,7 +138,7 @@ module.exports = {
                             res.redirect('/');
                         }
                         res.render('index.ejs', {
-                            funcionarios: result
+                            employees: result
                         });
                     })
                 })

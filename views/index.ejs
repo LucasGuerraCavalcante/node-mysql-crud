@@ -173,23 +173,23 @@
                                 <% if (employees.length > 0) {%>
                                 <% employees.forEach((employees, index) => { %>
                                 <label class="texto-label">Update Current Employee</label>
-                                <input name="name" class="form-control" id="inputBox" list="input" type="text"
+                                <input name="name" class="form-control input-box" list="input" type="text"
                                     value="<%= employees.name %>" placeholder="<%= employees.name %>">
-                                <input name="branch" class="form-control" id="inputBox" list="input" type="text"
+                                <input name="branch" class="form-control input-box" list="input" type="text"
                                     value="<%= employees.branch %>" placeholder="<%= employees.branch %>">
-                                <input name="registration" class="form-control" id="inputBox" list="input" type="text"
+                                <input name="registration" class="form-control input-box" list="input" type="text"
                                     value="<%= employees.registration %>" placeholder="<%= employees.registration %>"
                                     readonly>
-                                <input name="role" class="form-control" id="inputBox" list="input" type="text"
+                                <input name="role" class="form-control input-box" list="input" type="text"
                                     value="<%= employees.role %>" placeholder="<%= employees.role %>">
                                 <% })} %>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <button formaction="/update" type="submit" id="btn-editar"
+                                        <button formaction="/update" type="submit" id="btn-update"
                                             class="btn btn-block"><i class="fas fa-magic"></i> Update </button>
                                     </div>
                                     <div class="col-md-6">
-                                        <button formaction="/delete" type="submit" id="btn-excluir"
+                                        <button formaction="/delete" type="submit" id="btn-delete"
                                             class="btn btn-block"><i class="fas fa-trash"></i> Delete </button>
                                     </div>
                                 </div>
@@ -197,16 +197,16 @@
                         </div>
                         <div class="col-md-6">
                             <form class="texto-label" action="/register" method="GET">
-                                <% if (funcionarios.length > 0) {%>
-                                <% funcionarios.forEach((funcionarios, index) => { %>
+                                <% if (employees.length > 0) {%>
+                                <% employees.forEach((employees, index) => { %>
                                 <label class="">Register a new Employee</label>
-                                <input name="name" class="form-control" id="inputBox" list="input" type="text"
+                                <input name="name" class="form-control input-box" list="input" type="text"
                                     placeholder="New Employee's name">
-                                <input name="branch" class="form-control" id="inputBox" list="input" type="text"
+                                <input name="branch" class="form-control input-box" list="input" type="text"
                                     placeholder="Branch">
-                                <input name="registration" class="form-control" id="inputBox" list="input" type="text"
+                                <input name="registration" class="form-control input-box" list="input" type="text"
                                     placeholder="Registration">
-                                <input name="role" class="form-control" id="inputBox" list="input" type="text"
+                                <input name="role" class="form-control input-box" list="input" type="text"
                                     placeholder="Role">
                                 <% })} %>
                                 <button type="submit" id="btn-register" class="btn btn-block"><i
