@@ -20,17 +20,17 @@ body {
 
 #btn-search{
     margin-top: 15px;
-    background-color: #FFFF00;
+    background-color: #006699;
     font-weight: bold;
-    color: #006699;
+    color: #fff;
     border: 1px solid #006699; 
 }
 
 #btn-options, #btn-left, #btn-right{
     margin-top: 15px;
-    background-color: #FFFF00;
+    background-color: #006699;
     font-weight: bold;
-    color: #006699;
+    color: #fff;
     box-shadow: 5px 5px 10px #888888;
 }
 
@@ -38,15 +38,15 @@ body {
     margin-top: 15px;
     background-color: #ff0000;
     font-weight: bold;
-    color: #ffffff;
+    color: #fff;
     box-shadow: 5px 5px 10px #888888;
 }
 
 #btn-update, #btn-register {
     margin-top: 15px;
-    background-color: #0059ff;
+    background-color: #006699;
     font-weight: bold;
-    color: #ffffff;
+    color: #fff;
     box-shadow: 5px 5px 10px #888888;
 }
 
@@ -84,8 +84,8 @@ body {
 }
 
 th{
-    background-color: #FFFF00;
-    color: #006699
+    background-color: #006699;
+    color: #fff
 }
 
 td{

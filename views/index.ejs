@@ -38,7 +38,7 @@
                     <form class="" action="/search" method="GET">
                         <div class="form-row">
                             <div class="form-group col-md-4">
-                                <input name="name" class="form-control" id="input-box" list="input" type="text"
+                                <input name="name" class="form-control input-box" list="input" type="text"
                                     placeholder="Name">
                                 <datalist id="input">
                                     <% if (employees.length > 0) {%>
@@ -63,7 +63,7 @@
                             <% if (!employees.imgUrl) {%>
                             <img id="photo-box" src="assets/img/fundobranco.png" class="img-responsive">
                             <% } else { %>
-                            <img id="photo-box" src=<%= funcionarios.imgUrl %> class="img-responsive">
+                            <img id="photo-box" src=<%= employees.imgUrl %> class="img-responsive">
                             <% } %>
                             <% })} %>
                         </div>
